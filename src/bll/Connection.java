@@ -19,6 +19,7 @@ public class Connection implements IConnection {
         try {
             serverSocket = new ServerSocket(5000);
             socket = serverSocket.accept();
+            System.out.println( "server client connected");
 
         }catch (IOException e){
             System.out.println("connection failed " + e.getMessage());
@@ -49,6 +50,9 @@ public class Connection implements IConnection {
         // like port and address enz
         // not about closed or bound
 
+    }
 
+    public Socket getSocket() {
+        return socket;
     }
 }
